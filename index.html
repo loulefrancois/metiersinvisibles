@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<meta charset="utf-8" />
+
+
+<head>
+
+    <!-- Ce qui est écris sur l'onglet : -->
+    <title>Metier Coronavirus 3</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index4.css" />
+    <link rel="stylesheet" href="fluid_grid.css" />
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=BioRhyme+Expanded:wght@200;300;400;700;800&family=BioRhyme:wght@200;300;400;700;800&display=swap" rel="stylesheet">
+    <!-- JAVASCRIPT -->
+    <!-- JQUERY -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+
+</head>
+
+
+<body>
+
+
+    <!-- TOOLBAR -->
+
+    <div id="ToolBar">
+
+        <div id="titre">
+
+            <h1>Les métiers invisibles</h1>
+
+        </div>
+        <div id="modes">
+            <span class="active">Outil main</span><span class="active">Zoom au scroll</span>
+        </div>
+
+        <div id="zoom">
+            <span data-zoom="+"></span><span data-zoom="-"></span><input type="number">
+        </div>
+
+    </div>
+
+    <!-- TEXTE DROITE -->
+
+    <div id="texte">
+
+        <p id="texte-intro">
+
+            Je suis Lou je fais le site.
+
+        </p>
+
+        <p id="texte02">
+            <span id="croix02">X</span><br>C'est moi le texte d'explication de la case 09 de la carte test du projet de coronavirus et des métiers invisibles.C'est moi le texte d'explication de la case 09 de la carte test du projet de coronavirus et des métiers invisibles.C'est moi le texte d'explication de la case 09 de la carte test du projet de coronavirus et des métiers invisibles.C'est moi le texte d'explication de la case 09 de la carte test du projet de coronavirus et des métiers invisibles.C'est moi le texte d'explication de la case 09 de la carte test du projet de coronavirus et des métiers invisibles.C'est moi le texte d'explication de la case 09 de la carte test du projet de coronavirus et des métiers invisibles.C'est moi le texte d'explication de la case 09 de la carte test du projet de coronavirus et des métiers invisibles.C'est moi le texte d'explication de la case 09 de la carte test du projet de coronavirus et des métiers invisibles.
+        </p>
+
+        <p id="texte09">
+            <span id="croix09">X</span><br>GROUPE 09 C'est moi le texte d'explication de la case 09 de la carte test du projet de coronavirus et des métiers invisibles. Lou
+        </p>
+
+
+    </div>
+
+    <!-- CARTE -->
+
+    <div id="Main" class="canMove">
+
+        <div class="container_12">
+
+            <!-- wwwwwwwwwwwwwwwwwwwwwwwww -->
+
+            <div class="clear"></div>
+
+            <!-- wwwwwwwwwwwwwwwwwwwwwwwww -->
+
+            <div class="grid_2">
+
+                <img src="image/test-01.jpg">
+
+            </div>
+
+            <div class="grid_2">
+                <div id="groupe02">
+                    <img id="img02" src="image/test-02.jpg">
+                    <img id="img02-2" src="image/test-02bis-02.jpg">
+                </div>
+
+            </div>
+
+            <div class="grid_2">
+
+                <img src="image/test-03.jpg">
+
+            </div>
+
+            <div class="grid_2">
+
+                <img src="image/test-04.jpg">
+
+            </div>
+
+            <div class="grid_2">
+
+                <img src="image/test-05.jpg">
+
+            </div>
+
+            <div class="grid_2">
+
+                <img src="image/test-06.jpg">
+
+            </div>
+
+            <!-- wwwwwwwwwwwwwwwwwwwwwwwww -->
+
+            <div class="clear"></div>
+
+            <!-- wwwwwwwwwwwwwwwwwwwwwwwww -->
+
+            <div class="grid_2">
+
+                <img src="image/test-07.jpg">
+
+            </div>
+
+            <div class="grid_2">
+
+                <img src="image/test-08.jpg">
+
+            </div>
+
+            <div class="grid_2">
+                <div id="groupe09">
+                    <img id="img09" src="image/test-09.jpg">
+                    <img id="img09-2" src="image/test-09bis.jpg">
+                </div>
+            </div>
+
+            <div class="grid_2">
+                <div id="groupe10">
+                    <img id="img10" src="image/test-10.jpg">
+                </div>
+            </div>
+
+            <div class="grid_2">
+
+                <img src="image/test-11.jpg">
+
+            </div>
+            <div class="grid_2">
+
+                <img src="image/test-12.jpg">
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+    <!-- wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+
+    <!-- SCRIPT TEST -->
+
+    <script>
+        
+        // GROUPE 02
+        $("#groupe02").on('click', function() {
+            $("#img02").css("display", "none");
+            $("#img02-2").css("display", "block");
+            $("#texte02").css("display", "block");
+            $("#texte09").css("display","none");
+        });
+
+        $("#croix02").on('click', function() {
+           $("#texte02").css("display", "none");
+        });
+        
+        
+        // GROUPE 09
+        $("#groupe09").on('click', function() {
+            $("#img09").css("display", "none");
+            $("#img09-2").css("display", "block");
+            $("#texte09").css("display", "block");
+            $("#texte02").css("display","none");
+        });
+
+        $("#croix09").on('click', function() {
+           $("#texte09").css("display", "none");
+        });
+        
+        
+    </script>
+
+
+    <!-- wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+
+    <script>
+        /*
+        document.querySelector("#test").onclick = function() {
+            if (window.getComputedStyle(document.querySelector('#texte-09')).display == 'none') {
+                document.querySelector("#texte-09").style.display = "block";
+            } else {
+                document.querySelector("#texte-09").style.display = "none";
+            }
+        } */
+    </script>
+
+    <script>
+        /*
+        document.querySelector("#test").onclick = function() {
+                if (window.getComputedStyle(document.querySelector('#texte-09')).display == 'none') {
+                    document.querySelector("#texte-09").style.display = "block";
+                } */
+    </script>
+
+    <script>
+        /*
+        $('#test').click(function() {
+            $('#texte-09').toggle();
+        }); */
+    </script>
+
+    <!-- wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+
+    <script>
+        /*
+        document.querySelector("#test2").onclick = function() {
+            if (window.getComputedStyle(document.querySelector('#texte-10')).display == 'none') {
+                document.querySelector("#texte-10").style.display = "block";
+            } else {
+                document.querySelector("#texte-10").style.display = "none";
+            }
+        }*/
+    </script>
+
+    <!-- wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+    <!-- wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+    <!-- wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+
+    <!-- SCRIPT DE FONCTIONNEMENT DE LA PAGE -->
+
+    <script>
+        function addEvent(a, b, c, d) {
+            (a.addEventListener) ? a.addEventListener(b, c, d || !1): a.attachEvent("on" + b, c);
+        }
+
+        function removeEvent(a, b, c, d) {
+            a.removeEventListener ? a.removeEventListener(b, c, d || !1) : a.detachEvent("on" + b, c);
+        }
+
+        function endMove() {
+            main.className = "canMove";
+            removeEvent(document, "mousemove", doMove);
+            removeEvent(document, "mouseup", endMove);
+
+        }
+
+        function doMove(e) {
+            var dX = initialClickX - e.clientX,
+                dY = initialClickY - e.clientY;
+            window.scrollTo(initialScrollX + dX, initialScrollY + dY);
+
+        }
+
+        function initMove(e) {
+
+            if (!outilMain) return;
+
+            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+
+            main.className = "inMove";
+
+            initialScrollX = window.pageXOffset || document.documentElement.scrollLeft;
+            initialScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+            initialClickX = e.clientX;
+            initialClickY = e.clientY;
+
+            addEvent(document, "mousemove", doMove);
+            addEvent(document, "mouseup", endMove);
+
+        }
+
+        function doZoom(d) {
+
+            actualZoom += deltaZoom * d;
+            actualZoom < deltaZoom && (actualZoom = deltaZoom);
+
+            main.style[transform] = "scale(" + actualZoom + ")";
+
+            zoomInput.value = parseInt(actualZoom * 100);
+
+        }
+
+        function doZoomIn() {
+
+            doZoom(1);
+
+        }
+
+        function doZoomOut() {
+
+            doZoom(-1);
+
+        }
+
+        function changeManualZoom() {
+
+            actualZoom = parseInt(zoomInput.value) / 100;
+            main.style[transform] = "scale(" + actualZoom + ")";
+
+        }
+
+        function zoomWithScroll(e) {
+
+            if (!zoomAuScroll) return;
+
+            e.stopPropagation ? e.stopPropagation() : e.cancelBubble;
+            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+
+            var zoomUp = e.detail < 0 || e.wheelDelta > 0;
+
+            doZoom(zoomUp ? 1 : -1);
+
+        }
+
+        function modeMain() {
+
+            outilMain = outilMain ? false : true;
+            btnMain.className = outilMain ? "active" : "";
+            main.className = outilMain ? "canMove" : "";
+
+        }
+
+        function modeZoom() {
+
+            zoomAuScroll = zoomAuScroll ? false : true;
+            btnZoom.className = zoomAuScroll ? "active" : "";
+
+        }
+
+        var transform;
+
+        if ("transform" in document.body.style) {
+
+            transform = "transform";
+
+        } else {
+
+            for (p in document.body.style) {
+
+                if (/^((Moz|(?:w|W)ebkit|ms|o)Transform)/.exec(p)) {
+                    transform = RegExp.$1;
+                    break;
+                }
+
+            }
+
+        }
+
+        var main = document.getElementById("Main");
+
+        var zoomIn = document.querySelector("#zoom span:first-child"),
+            zoomOut = document.querySelector("#zoom span+span"),
+            zoomInput = document.querySelector("#zoom input");
+
+        var btnMain = document.querySelector("#modes span:first-child"),
+            btnZoom = document.querySelector("#modes span+span");
+
+        var actualZoom = 1,
+            deltaZoom = .1;
+
+        var outilMain = true,
+            zoomAuScroll = false;
+
+
+        zoomInput.value = "100";
+
+        if (transform) {
+            main.style[transform + "Origin"] = "0 0"
+        } else {
+            document.getElementById("zoom").style.display = btnZoom.style.display = "none";
+        }
+
+
+        addEvent(main, "mousedown", initMove);
+        addEvent(zoomIn, "click", doZoomIn);
+        addEvent(zoomOut, "click", doZoomOut);
+        addEvent(zoomInput, "change", changeManualZoom);
+        addEvent(btnMain, "click", modeMain);
+        addEvent(btnZoom, "click", modeZoom);
+        addEvent(document, "DOMMouseScroll", zoomWithScroll);
+        addEvent(document, "mousewheel", zoomWithScroll);
+    </script>
+
+</body>
+
+</html>

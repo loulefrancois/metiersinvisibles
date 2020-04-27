@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<meta charset="utf-8" />
+
+
+<head>
+
+    <!-- Ce qui est écris sur l'onglet : -->
+    <title>Metier Coronavirus</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index2.css" />
+    <link rel="stylesheet" href="fluid_grid.css" />
+    <!-- Touche pas -->
+    <!-- JAVASCRIPT -->
+
+
+</head>
+
+
+<body>
+
+    <div id="ToolBar">
+        <div id="modes"><span class="active">Outil main</span><span>Zoom au scroll</span></div>
+        <div id="zoom"><span data-zoom="+"></span><span data-zoom="-"></span><input type="number"></div>
+    </div>
+
+    <div id="Main" class="canMove">
+
+        <div class="container">
+
+            <div class="grid_6">
+                <img class="deux" src="image/saint-aubin_axonometrie-03.jpg" />
+
+            </div>
+            <div class="grid_6">
+                <img class="deux" src="image/saint-aubin_axonometrie-04.jpg" />
+
+            </div>
+
+        </div>
+        <img class="deux" src="image/saint-aubin_axonometrie-03.jpg" />
+        <img class="deux" src="image/saint-aubin_axonometrie-04.jpg" />
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    function addEvent(a, b, c, d) {
+        (a.addEventListener) ? a.addEventListener(b, c, d || !1): a.attachEvent("on" + b, c);
+    }
+
+    function removeEvent(a, b, c, d) {
+        a.removeEventListener ? a.removeEventListener(b, c, d || !1) : a.detachEvent("on" + b, c);
+    }
+
+    function endMove() {
+
+        main.className = "canMove";
+
+        removeEvent(document, "mousemove", doMove);
+        removeEvent(document, "mouseup", endMove);
+
+    }
+
+    function doMove(e) {
+
+        var dX = initialClickX - e.clientX,
+            dY = initialClickY - e.clientY;
+
+        window.scrollTo(initialScrollX + dX, initialScrollY + dY);
+
+    }
+
+    function initMove(e) {
+
+        if (!outilMain) return;
+
+        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+
+        main.className = "inMove";
+
+        initialScrollX = window.pageXOffset || document.documentElement.scrollLeft;
+        initialScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+        initialClickX = e.clientX;
+        initialClickY = e.clientY;
+
+        addEvent(document, "mousemove", doMove);
+        addEvent(document, "mouseup", endMove);
+
+    }
+
+    function doZoom(d) {
+
+        actualZoom += deltaZoom * d;
+        actualZoom < deltaZoom && (actualZoom = deltaZoom);
+
+        main.style[transform] = "scale(" + actualZoom + ")";
+
+        zoomInput.value = parseInt(actualZoom * 100);
+
+    }
+
+    function doZoomIn() {
+
+        doZoom(1);
+
+    }
+
+    function doZoomOut() {
+
+        doZoom(-1);
+
+    }
+
+    function changeManualZoom() {
+
+        actualZoom = parseInt(zoomInput.value) / 100;
+        main.style[transform] = "scale(" + actualZoom + ")";
+
+    }
+
+    function zoomWithScroll(e) {
+
+        if (!zoomAuScroll) return;
+
+        e.stopPropagation ? e.stopPropagation() : e.cancelBubble;
+        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+
+        var zoomUp = e.detail < 0 || e.wheelDelta > 0;
+
+        doZoom(zoomUp ? 1 : -1);
+
+    }
+
+    function modeMain() {
+
+        outilMain = outilMain ? false : true;
+        btnMain.className = outilMain ? "active" : "";
+        main.className = outilMain ? "canMove" : "";
+
+    }
+
+    function modeZoom() {
+
+        zoomAuScroll = zoomAuScroll ? false : true;
+        btnZoom.className = zoomAuScroll ? "active" : "";
+
+    }
+
+    var transform;
+
+    if ("transform" in document.body.style) {
+
+        transform = "transform";
+
+    } else {
+
+        for (p in document.body.style) {
+
+            if (/^((Moz|(?:w|W)ebkit|ms|o)Transform)/.exec(p)) {
+                transform = RegExp.$1;
+                break;
+            }
+
+        }
+
+    }
+
+    var main = document.getElementById("Main");
+
+    var zoomIn = document.querySelector("#zoom span:first-child"),
+        zoomOut = document.querySelector("#zoom span+span"),
+        zoomInput = document.querySelector("#zoom input");
+
+    var btnMain = document.querySelector("#modes span:first-child"),
+        btnZoom = document.querySelector("#modes span+span");
+
+    var actualZoom = 1,
+        deltaZoom = .1;
+
+    var outilMain = true,
+        zoomAuScroll = false;
+
+
+    zoomInput.value = "100";
+
+    if (transform) {
+        main.style[transform + "Origin"] = "0 0"
+    } else {
+        document.getElementById("zoom").style.display = btnZoom.style.display = "none";
+    }
+
+
+    addEvent(main, "mousedown", initMove);
+    addEvent(zoomIn, "click", doZoomIn);
+    addEvent(zoomOut, "click", doZoomOut);
+    addEvent(zoomInput, "change", changeManualZoom);
+    addEvent(btnMain, "click", modeMain);
+    addEvent(btnZoom, "click", modeZoom);
+    addEvent(document, "DOMMouseScroll", zoomWithScroll);
+    addEvent(document, "mousewheel", zoomWithScroll);
+
+</script>
