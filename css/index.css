@@ -1,16 +1,310 @@
+/* font-family: 'Arvo', serif;
+font-family: 'BioRhyme', serif;
+font-family: 'BioRhyme Expanded', serif;
+font-family: 'Archivo', sans-serif;
+font-family: 'Archivo Narrow', sans-serif;*/
+
+html,
 body {
     margin: 0;
-    border: 2px solid red;
-    height: 700px;
+    background: #F0F0F0;
 }
 
-model-viewer {
-height: 100%;
-width: 100%;}
+#Main {
+    position: absolute;
+}
 
-.model3d {
-border: 2px solid purple;
+body a {
+    color: black;
+    font-weight: 200;
+}
+
+/* CURSOR */
+
+#Main.canMove {
+    cursor: grab;
+}
+
+#Main.inMove {
+    cursor: grabbing;
+}
+
+
+/* IMAGES */
+
+#Main img {
     width: 100%;
-    height: 700px;
-    background-color: grey;
+}
+
+#Main .un,
+#Main .deux,
+#Main .trois,
+#Main .quatre,
+#Main .cinq,
+#Main .six,
+#Main .sept,
+#Main .huit,
+#Main .neuf,
+#Main .dix,
+#Main .onze,
+#Main .douze {
+    position: absolute;
+    z-index: 200;
+}
+
+#Main .un:hover,
+#Main .deux:hover,
+#Main .trois:hover,
+#Main .quatre:hover,
+#Main .cinq:hover,
+#Main .six:hover,
+#Main .sept:hover,
+#Main .huit:hover,
+#Main .neuf:hover,
+#Main .dix:hover,
+#Main .onze:hover,
+#Main .douze:hover {
+    cursor: pointer;
+    opacity: 0;
+}
+
+/* TEXTE GENERAUX */
+
+#texte p {
+    margin: 0;
+}
+
+#texte #texte-intro,
+#texte #legende,
+#texte #un_texte,
+#texte #deux_texte,
+#texte #trois_texte,
+#texte #quatre_texte,
+#texte #cinq_texte,
+#texte #six_texte,
+#texte #sept_texte,
+#texte #huit_texte,
+#texte #neuf_texte,
+#texte #dix_texte,
+#texte #onze_texte,
+#texte #douze_texte {
+    width: 22%;
+    position: fixed;
+    padding: 15px;
+    line-height: 1.4em;
+    background: #F0F0F0;
+    border: 1px solid #8C8C8C;
+    z-index: 900;
+    font-family: 'BioRhyme', serif;
+    font-weight: 300;
+    font-size: 1.1em;
+}
+
+#texte #texte-intro {
+    overflow: scroll;
+    bottom: 1em;
+}
+#texte #texte-intro,
+#texte #un_texte,
+#texte #deux_texte,
+#texte #trois_texte,
+#texte #quatre_texte,
+#texte #cinq_texte,
+#texte #six_texte,
+#texte #sept_texte,
+#texte #huit_texte,
+#texte #neuf_texte,
+#texte #dix_texte,
+#texte #onze_texte,
+#texte #douze_texte {
+    top: 3.5em;
+    right: 1em;
+}
+
+#texte #legende {
+    bottom: 1em;
+    left: 1em;
+}
+
+/* HOVER STYLE */
+
+/* Vert */
+#un_texte a,
+#deux_texte a,
+#huit_texte a {
+    text-decoration: underline #00FF00;
+}
+
+#un_texte a:hover,
+#deux_texte a:hover,
+#huit_texte a:hover {
+    color: #00FF00;
+    text-decoration: none;
+}
+
+/* Violet */
+#trois_texte a,
+#quatre_texte a,
+#onze_texte a {
+    text-decoration: underline #791CF8;
+}
+
+#trois_texte a:hover,
+#quatre_texte a:hover,
+#onze_texte a:hover {
+    color: #791CF8;
+    text-decoration: none;
+}
+
+/* Jaune */
+#cinq_texte a,
+#sept_texte a,
+#neuf_texte a {
+    text-decoration: underline #FFFF00;
+}
+
+#cinq_texte a:hover,
+#sept_texte a:hover,
+#neuf_texte a:hover {
+    color: #FFFF00;
+    text-decoration: none;
+}
+
+/* Rose */
+#six_texte a,
+#dix_texte a,
+#rose_texte a {
+    text-decoration: underline #FF00FF;
+}
+
+#six_texte a:hover,
+#dix_texte a:hover,
+#rose_texte a:hover {
+    color: #FF00FF;
+    text-decoration: none;
+}
+
+.titre {
+    font-weight: 500;
+}
+/* TEXTE INTRO */
+
+
+/* TEXTE IMAGES */
+
+#texte #un_texte,
+#texte #deux_texte,
+#texte #trois_texte,
+#texte #quatre_texte,
+#texte #cinq_texte,
+#texte #six_texte,
+#texte #sept_texte,
+#texte #huit_texte,
+#texte #neuf_texte,
+#texte #dix_texte,
+#texte #onze_texte,
+#texte #douze_texte {
+    display: none;
+}
+
+
+/* CROIX */
+
+.croixtexte,
+.croixtextelegende,
+.croixtextevert,
+.croixtexteviolet,
+.croixtextejaune,
+.croixtexterose {
+    font-size: 2.5em;
+    line-height: 0.3em;
+}
+
+.croixtexte:hover,
+.croixtextelegende:hover,
+.croixtextevert:hover,
+.croixtexteviolet:hover,
+.croixtextejaune:hover,
+.croixtexterose:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.croixtextevert {
+    color: #00FF00;
+}
+
+.croixtexteviolet {
+    color: #791CF8;
+}
+
+.croixtexterose {
+    color: #FF00FF;
+}
+
+.croixtextejaune {
+    color: #FFFF00;
+}
+
+/* TOOLBAR */
+
+h1 {
+    font-family: 'BioRhyme', serif;
+    margin: 0;
+    padding-left: 0.6em;
+}
+
+#ToolBar {
+    margin-top: 0.2em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#ToolBar > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#ToolBar span {
+    cursor: pointer;
+    transition: background .4s ease;
+    height: 50px;
+}
+
+#ToolBar span:hover {
+    border: 1px solid;
+}
+
+
+
+
+
+#zoom {
+    float: right;
+    font-family: 'BioRhyme', serif;
+    font-size: 1.6em;
+}
+
+#zoom span {
+    display: inline-block;
+    vertical-align: top;
+    width: 70px;
+    margin-right: 1px;
+    text-align: center;
+}
+
+#zoom span:before {
+    content: attr(data-zoom);
+}
+
+#zoom input {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'BioRhyme', serif;
+    width: 70px;
+    height: 50px;
 }
